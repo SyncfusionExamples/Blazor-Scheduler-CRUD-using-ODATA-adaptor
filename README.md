@@ -1,0 +1,1 @@
+# Blazor-Scheduler-CRUD-using-ODATA-adaptor

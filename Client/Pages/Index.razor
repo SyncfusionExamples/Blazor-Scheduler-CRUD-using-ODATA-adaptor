@@ -1,5 +1,7 @@
 ﻿@page "/"
 
+<PageTitle>Index</PageTitle>
+
 @using Syncfusion.Blazor.Schedule
 @using Syncfusion.Blazor.Data
 @using BlazorSchedulerCrud.Shared
@@ -8,14 +10,9 @@
     <ScheduleEventSettings TValue="Appointment">
         <SfDataManager Url="https://localhost:7146/odata/Appointment" Adaptor="Adaptors.ODataV4Adaptor"></SfDataManager>
     </ScheduleEventSettings>
-    <ScheduleEvents TValue="Appointment" OnActionFailure="OnFailure"></ScheduleEvents>
 </SfSchedule>
 
 @code {
     public Query QueryData = new Query().From("Appointment");
-    public DateTime SelectedDate = new DateTime(2020, 01, 09);
-    public void OnFailure(ActionEventArgs<Appointment> args)
-    {
-        Console.WriteLine(args.Error.Message);
-    }
+    public DateTime SelectedDate = new DateTime(2023, 01, 09);
 }

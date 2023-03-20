@@ -1,9 +1,9 @@
 # Blazor-Scheduler-CRUD-using-ODATA-adaptor
-This blog explains the procedures to easily synchronize the Syncfusion Blazor Scheduler with ODataV4 service in .NET 7 to illustrate performing CRUD actions along with code examples.
+This blog explains the procedures to perform Batch CRUD with ODATA adaptor using .NET 7 Syncfusion Blazor Scheduler along with code examples.
 
 ## Prerequisites
 
-* Visual Studio 2022 17.5.0 Preview 2.0
+* Visual Studio 2022
 * .NET Core 7.0
 
 

@@ -9,8 +9,8 @@ namespace BlazorSchedulerCrud.Shared
     public class Appointment
     {
         public int Id { get; set; }
-        public string Subject { get; set; }
-        public string Location { get; set; }
+        public string? Subject { get; set; }
+        public string? Location { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
         public string? StartTimezone { get; set; }

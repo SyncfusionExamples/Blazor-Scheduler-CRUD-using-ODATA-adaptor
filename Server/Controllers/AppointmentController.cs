@@ -46,7 +46,6 @@ namespace BlazorSchedulerCrud.Server.Controllers
         public async Task Patch([FromODataUri] int key, [FromBody] Appointment events)
         {
             var entity = await _db.EventsData.FindAsync(key);
-            //events.Patch(entity);
             _db.Entry(entity).CurrentValues.SetValues(events);
             await _db.SaveChangesAsync();
         }

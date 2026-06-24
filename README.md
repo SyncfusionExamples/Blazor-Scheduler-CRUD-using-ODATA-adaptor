@@ -1,4 +1,4 @@
-# Blazor-Scheduler-CRUD-using-ODATA-adaptor
+# How to perform CRUD operations in Blazor Scheduler using OData adaptor
 
 ## Repository Description
 

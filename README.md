@@ -2,7 +2,7 @@
 
 ## Repository Description
 
-This project demonstrates batch CRUD operations with ODATA adaptor integration using .NET 7 and Syncfusion Blazor Scheduler, providing a comprehensive example of data manipulation and event scheduling in enterprise applications.
+This project demonstrates batch CRUD operations with ODATA adaptor integration using .NET 7 and [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler), providing a comprehensive example of data manipulation and event scheduling in enterprise applications.
 
 ## Project Overview
 

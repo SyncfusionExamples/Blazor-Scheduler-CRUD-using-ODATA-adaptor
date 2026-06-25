@@ -1,12 +1,6 @@
 # How to perform CRUD operations in Blazor Scheduler using OData Adaptor
 
-## Repository Description
-
-This project demonstrates batch CRUD operations with ODATA adaptor integration using .NET 7 and [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler), providing a comprehensive example of data manipulation and event scheduling in enterprise applications.
-
-## Project Overview
-
-This repository contains a complete implementation of the Syncfusion Blazor Scheduler with OData adaptor integration, showcasing how to perform Create, Read, Update, and Delete (CRUD) operations on scheduler events. The project leverages .NET 7 for optimal performance and uses OData protocol for seamless data synchronization.
+This project demonstrates batch CRUD operations in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler) using OData adaptor integration with .NET 7. It covers handling event data through Create, Read, Update, and Delete operations while leveraging the OData protocol for efficient data communication and synchronization. The sample serves as a practical reference for implementing scalable and enterprise-ready scheduling applications with Syncfusion Blazor components.
 
 ## Technologies
 
@@ -18,9 +12,7 @@ This repository contains a complete implementation of the Syncfusion Blazor Sche
 ## Prerequisites
 
 * Visual Studio 2022
-* .NET Core 7.0
-* Basic knowledge of Blazor and C#
-* Understanding of OData concepts
+* .NET Core 7.0 or later
 
 ## Features
 
@@ -32,10 +24,10 @@ This repository contains a complete implementation of the Syncfusion Blazor Sche
 
 ## How to Run the Project
 
-1. Checkout this project to a location on your disk
+1. Checkout this project to your local machine
 2. Open the solution file using Visual Studio 2022
-3. Restore the NuGet packages by rebuilding the solution
-4. Run the project
+3. Build the solution to restore the required NuGet packages
+4. Press `F5` to start the application
 
 ## Configuration
 

@@ -1,20 +1,22 @@
 using BlazorSchedulerCrud.Server.Models;
 using BlazorSchedulerCrud.Shared;
-using Microsoft.AspNet.OData.Batch;
-using Microsoft.AspNet.OData.Builder;
-using Microsoft.AspNet.OData.Extensions;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.OData;
+using Microsoft.AspNetCore.OData.Batch;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.Edm;
+using Microsoft.OData.ModelBuilder;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddDbContext<ScheduleDataContext>(options => options.UseInMemoryDatabase("Events"));
-builder.Services.AddOData();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddOData(options => options
+    .Select().Filter().Expand().OrderBy()
+    .AddRouteComponents(
+        routePrefix: "odata",
+        model: GetEdmModel(),
+        configureServices: services => services.AddSingleton<ODataBatchHandler, DefaultODataBatchHandler>()));
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -39,21 +41,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.MapRazorPages();
+app.MapControllers();
+app.MapFallbackToFile("index.html");
+
+app.Run();
+
 IEdmModel GetEdmModel()
 {
     var odataBuilder = new ODataConventionModelBuilder();
     odataBuilder.EntitySet<Appointment>("Appointment");
     return odataBuilder.GetEdmModel();
 }
-
-app.MapRazorPages();
-app.MapControllers();
-app.Select().Filter().Expand().OrderBy();
-app.MapODataRoute(
-    routeName: "odata",
-    routePrefix: "odata",
-    model: GetEdmModel(),
-    batchHandler: new DefaultODataBatchHandler());
-app.MapFallbackToFile("index.html");
-
-app.Run();

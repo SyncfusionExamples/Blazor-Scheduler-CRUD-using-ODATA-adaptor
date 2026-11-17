@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorSchedulerCrud.Client.Models
+namespace BlazorSchedulerCrud.Models
 {
     public class Appointment
     {

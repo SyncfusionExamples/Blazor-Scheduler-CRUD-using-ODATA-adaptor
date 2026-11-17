@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BlazorSchedulerCrud.csproj" />
+  <Project Path="Server/BlazorSchedulerCrud.Server.csproj" />
+</Solution>

@@ -1,9 +1,9 @@
 ﻿using System;
-using BlazorSchedulerCrud.Client.Models;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BlazorSchedulerCrud.Models
+namespace BlazorSchedulerCrud.Server.Models
 {
     public partial class ScheduleDataContext : DbContext
     {

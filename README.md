@@ -11,7 +11,7 @@ This project demonstrates batch CRUD operations in the [Blazor Scheduler](https:
 
 ## Prerequisites
 
-* Visual Studio 2026 or Visual Studio 2022 (17.14 or later)
+* Visual Studio 2026 or Visual Studio Code
 * .NET 10 SDK or later
 
 ## Features
@@ -24,15 +24,28 @@ This project demonstrates batch CRUD operations in the [Blazor Scheduler](https:
 
 ## How to Run the Project
 
-1. Checkout this project to your local machine
-   (the solution contains the `BlazorSchedulerCrud` server project and the `BlazorSchedulerCrud.Client` WebAssembly project)
-2. Open `BlazorSchedulerCrud.sln` in Visual Studio
-3. Build the solution to restore the required NuGet packages
-4. Press `F5` to start the application
+The solution has two projects: `Client` (Blazor WebAssembly app) and `Server` (OData service).
+
+**Visual Studio 2026**:
+
+* Checkout this project to a location on your disk.
+* Open `BlazorSchedulerCrud.sln`.
+* Set both `BlazorSchedulerCrud.Server` and `BlazorSchedulerCrud.Client` as startup projects.
+* Restore the NuGet packages and run.
+
+**Visual Studio Code**:
+
+```shell
+dotnet restore
+dotnet run --project Server --launch-profile https
+dotnet run --project Client --launch-profile https
+```
+
+Run the commands in separate terminals, then open the URL displayed by the Client project.
 
 ## Configuration
 
-Configure the OData service endpoint in your application settings to enable communication between the Blazor Scheduler and your backend data service. Ensure your OData service supports batch operations for optimal performance.
+Configure the OData service endpoint (`Url` of `SfDataManager` in `Client/Pages/Home.razor`; the server allows the client origin through CORS in `Server/Program.cs`) to enable communication between the Blazor Scheduler and your backend data service. Ensure your OData service supports batch operations for optimal performance.
 
 ## Documentation Links
 

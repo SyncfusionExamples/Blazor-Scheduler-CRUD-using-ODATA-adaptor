@@ -1,8 +1,4 @@
-using BlazorSchedulerCrud.Models;
-using Syncfusion.Blazor;
-using BlazorSchedulerCrud.Client.Models;
-using Syncfusion.Blazor;
-using Syncfusion.Blazor.Data;
+using BlazorSchedulerCrud.Server.Models;
 using Microsoft.AspNet.OData.Batch;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
@@ -11,32 +7,25 @@ using Microsoft.OData.Edm;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddDbContext<ScheduleDataContext>(options => options.UseInMemoryDatabase("Events"));
 builder.Services.AddOData();
-builder.Services.AddControllersWithViews();
-builder.Services.AddSyncfusionBlazor();
-builder.Services.AddRazorComponents()
-    .AddInteractiveWebAssemblyComponents();
+builder.Services.AddControllers();
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
+    policy.WithOrigins("https://localhost:7279", "http://localhost:5179")
+          .AllowAnyHeader()
+          .AllowAnyMethod()));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
-    app.UseWebAssemblyDebugging();
-}
-else
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
 }
 
 app.UseODataBatching();
 app.UseHttpsRedirection();
-
 app.UseRouting();
-app.UseAntiforgery();
+app.UseCors();
 
 IEdmModel GetEdmModel()
 {
@@ -52,10 +41,5 @@ app.MapODataRoute(
     routePrefix: "odata",
     model: GetEdmModel(),
     batchHandler: new DefaultODataBatchHandler());
-
-app.MapStaticAssets();
-app.MapRazorComponents<BlazorSchedulerCrud.Components.App>()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(BlazorSchedulerCrud.Client._Imports).Assembly);
 
 app.Run();

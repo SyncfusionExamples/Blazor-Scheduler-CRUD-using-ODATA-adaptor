@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BlazorSchedulerCrud.Models;
-using BlazorSchedulerCrud.Client.Models;
+using BlazorSchedulerCrud.Server.Models;
+
 using Microsoft.AspNet.OData;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace BlazorSchedulerCrud.Controllers
+namespace BlazorSchedulerCrud.Server.Controllers
 {
     public class AppointmentController : ODataController
     {

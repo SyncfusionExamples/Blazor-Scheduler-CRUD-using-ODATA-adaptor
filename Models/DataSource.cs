@@ -1,11 +1,11 @@
-﻿using BlazorSchedulerCrud.Server.Models;
+﻿using BlazorSchedulerCrud.Models;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorSchedulerCrud.Server.Models
+namespace BlazorSchedulerCrud.Models
 {
     public static class DataSource
     {

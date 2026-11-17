@@ -3,7 +3,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BlazorSchedulerCrud.Server.Models
+namespace BlazorSchedulerCrud.Models
 {
     public partial class ScheduleDataContext : DbContext
     {

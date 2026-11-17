@@ -1,18 +1,18 @@
 # How to perform CRUD operations in Blazor Scheduler using OData Adaptor
 
-This project demonstrates batch CRUD operations in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler) using OData adaptor integration with .NET 7. It covers handling event data through Create, Read, Update, and Delete operations while leveraging the OData protocol for efficient data communication and synchronization. The sample serves as a practical reference for implementing scalable and enterprise-ready scheduling applications with Syncfusion Blazor components.
+This project demonstrates batch CRUD operations in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler) using OData adaptor integration with .NET 10. It covers handling event data through Create, Read, Update, and Delete operations while leveraging the OData protocol for efficient data communication and synchronization. The sample serves as a practical reference for implementing scalable and enterprise-ready scheduling applications with Syncfusion Blazor components.
 
 ## Technologies
 
 * **Blazor** - Modern web framework for building interactive web applications
-* **.NET 7** - Latest .NET platform for building robust applications
+* **.NET 10** - Latest .NET platform for building robust applications
 * **Syncfusion Blazor Scheduler** - Enterprise-grade scheduling component
 * **OData Adaptor** - Protocol for data access and manipulation
 
 ## Prerequisites
 
-* Visual Studio 2022
-* .NET Core 7.0 or later
+* Visual Studio 2026 or Visual Studio 2022 (17.14 or later)
+* .NET 10 SDK or later
 
 ## Features
 
@@ -25,7 +25,8 @@ This project demonstrates batch CRUD operations in the [Blazor Scheduler](https:
 ## How to Run the Project
 
 1. Checkout this project to your local machine
-2. Open the solution file using Visual Studio 2022
+   (the solution contains the `BlazorSchedulerCrud` server project and the `BlazorSchedulerCrud.Client` WebAssembly project)
+2. Open `BlazorSchedulerCrud.sln` in Visual Studio
 3. Build the solution to restore the required NuGet packages
 4. Press `F5` to start the application
 
